@@ -1,0 +1,16 @@
+@use './color' as color;
+@use './font' as font;
+@use './mixin' as mixin;
+
+*{
+  margin: 0;
+  padding: 0;
+
+  //Font
+  font-family: 'Noto Sans KR', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+  color: color.$color-black-700;
+}
