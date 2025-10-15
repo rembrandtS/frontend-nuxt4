@@ -4,11 +4,11 @@
 
 import { defineStore } from 'pinia';
 
-// Composition 방식
-export const useCompositionStore = defineStore("counter", () => {
+// Composition(Setup) 방식
+export const useCompositionStore = defineStore("composition", () => {
     // state
-    const count = ref<number>(11);
-    const name = ref<string>('rembrandt');
+    const count = ref<number>(22);
+    const name = ref<string>('79storm');
 
     // getters
     const doubleCount = computed(() => count.value * 2);
@@ -23,7 +23,7 @@ export const useCompositionStore = defineStore("counter", () => {
 });
 
 // Options API 방식
-export const useOptionsStore = defineStore('counter', {
+export const useOptionsStore = defineStore('options', {
     state: () => ({
         count: 11,
         name: 'rembrandt',

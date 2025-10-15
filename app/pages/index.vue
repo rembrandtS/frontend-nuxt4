@@ -3,7 +3,7 @@ import CardComponent from './components/Card.vue';
 import {useStore} from '@/stores/api';
 
 const store = useStore();
-await useAsyncData("getNews", store.getNews);
+const {pending} = await useAsyncData("getNews", store.getNews);
 </script>
 
 <template>

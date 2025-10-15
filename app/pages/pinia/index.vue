@@ -1,13 +1,15 @@
 <!--pinia store 사용 테스트  -->
 <script setup lang="ts">
-import {useOptionsStore} from '~/stores/pinia';
-import {useCompositionStore} from '~/stores/pinia';
+import {useOptionsStore} from '@/stores/pinia';
+import {useCompositionStore} from '@/stores/pinia';
+import { storeToRefs } from 'pinia';
 
 const storeOptions = useOptionsStore(); // Options API 방식 - pinia store 에서 가져온 객체는 기본 반응성 유지
 const storeComposition = useCompositionStore(); // Composition API 방식 - pinia store 에서 가져온 객체는 기본 반응성 유지
 
-// const {count, name, doubleCount, tripleCount, increment} = storeOptions; // 구조 분해된 변수에는 반응성 상실 (toRef, toRefs 마찬가지)
-const {count, name, doubleCount, tripleCount, increment} = storeToRefs(storeComposition); // storeToRef 로 하면 반응성 유지
+//const {count, name, doubleCount, tripleCount, increment} = storeOptions; // 구조 분해된 state와 getter는 반응성 상실 (toRef, toRefs 마찬가지)
+const {count, name, doubleCount, tripleCount} = storeToRefs(storeComposition); // 상태(state, getter)는 storeToRef 로 하면 반응성 유지
+const {increment} = useCompositionStore; // action 함수는 스토어에 바인딩 되어 있으므로 직접 구조 분해
 
 </script>
 

@@ -8,9 +8,9 @@ export const useStore  = defineStore('api', () => {
     const searchValue = ref<string>('korea');
     const articles = ref<Article[]>([]);
 
-    // actions & mutations
-    const changeSearchValue = (payload: string) => {
-        searchValue.value = payload;
+    // actions & mutations은 pinia에 없다. action이 같이 수행
+    const changeSearchValue = (nav: string) => {
+        searchValue.value = nav;
         getNews();
     }
 
