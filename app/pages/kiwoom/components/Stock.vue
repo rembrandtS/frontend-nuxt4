@@ -8,9 +8,9 @@ interface Props {
 const props = defineProps<Props>();
 const {data}=toRefs(props); //구조 분해 할당
 
-function formatMoney(value) {
-  return new Intl.NumberFormat('ko-KR').format(value);
-}
+// function formatMoney(value) {
+//   return new Intl.NumberFormat('ko-KR').format(value);
+// }
 </script>
 
 <template>
@@ -24,13 +24,13 @@ function formatMoney(value) {
       </div>
       <div class="card__info-box__body">
         <span class="contents">
-          현재가: {{formatMoney(data.cur_prc)}}원 | 보유수량: {{data.rmnd_qty}}주
+          현재가: {{formatNumber(data.cur_prc)}}원 | 보유수량: {{data.rmnd_qty}}주
         </span>
         <span class="contents">
-          평가금액: {{formatMoney(data.evlt_amt)}}원 | 평가비중: {{data.evlt_wght}}%
+          평가금액: {{formatNumber(data.evlt_amt)}}원 | 평가비중: {{data.evlt_wght}}%
         </span>
         <span class="contents">
-          매입단가: {{formatMoney(data.buy_uv)}}원 | 매수비중: {{data.buy_wght}}%
+          매입단가: {{formatNumber(data.buy_uv)}}원 | 매수비중: {{data.buy_wght}}%
         </span>
       </div>
     </div>
@@ -39,7 +39,7 @@ function formatMoney(value) {
         <img src="../../../assets/icons/result.svg" alt="" class="image" />
       </div>
       <div class="card__profile-box__detail">
-        <span class="name">{{formatMoney(data.evltv_prft)}}원</span>
+        <span class="name">{{formatNumber(data.evltv_prft)}}원</span>
         <span class="date">{{data.prft_rt}}%</span>
       </div>
     </div>
