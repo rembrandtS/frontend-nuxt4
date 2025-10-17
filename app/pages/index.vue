@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CardComponent from './components/Card.vue';
+import CardComponent from './news/components/Card.vue';
 import {useStore} from '@/stores/api';
 
 const store = useStore();
@@ -8,7 +8,9 @@ const {pending} = await useAsyncData("getNews", store.getNews);
 
 <template>
 <div class="page">
-  <CardComponent v-for="article in store.articles" :key="article.url" :data="article" />
+  <NuxtLink to="/news">뉴스 보러 가기</NuxtLink>
+  <br/>
+  <NuxtLink to="/kiwoom">주식 보러 가기</NuxtLink>
 </div>
 </template>
 

@@ -18,7 +18,7 @@ const {pending} = await useAsyncData("getToken", store.getToken);
     <br>
   </div>
 
-
+  <NuxtLink to="/kiwoom/account/ka01690">주식 현황 보러 가기</NuxtLink>
 </template>
 
 <style lang="scss" scoped>

@@ -1,9 +1,11 @@
 <template>
   <div>
-    <AppHeader />
-    <AppNav />
-    <NuxtPage />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>
 <script setup lang="ts">
+const router = useRouter();
+router.getRoutes().forEach((item) => {console.log("getRoutes",item.path);});
 </script>

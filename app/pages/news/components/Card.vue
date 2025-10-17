@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import dayjs from 'dayjs';
-import type { Article } from '@/types/api';
+import type { Article } from '~/types/api';
 
 interface Props {
   data: Article;
@@ -40,7 +40,7 @@ const logo = computed(() => {
     </div>
     <div class="card__profile-box">
       <div class="card__profile-box__image-box">
-        <img src="@/assets/icons/user.svg" alt="" class="image" />
+        <img src="../../../assets/icons/user.svg" alt="" class="image" />
       </div>
       <div class="card__profile-box__detail">
         <span class="name">{{data.author}}</span>
@@ -52,8 +52,8 @@ const logo = computed(() => {
 </template>
 
 <style scoped lang="scss">
-@use "@/assets/scss/_mixin.scss" as mixin;
-@use "@/assets/scss/_color.scss" as color;
+@use "~/assets/scss/mixin" as mixin;
+@use "~/assets/scss/color" as color;
 
 .card {
   @include mixin.flexbox(flex-start, flex-start);

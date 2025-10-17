@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import CardComponent from '../components/Card.vue';
-import {useStore} from '@/stores/api';
+import {useStore} from '~/stores/api';
 import {VueSpinnerFacebook} from "vue3-spinners";
 
 const route = useRoute();
@@ -24,7 +24,7 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
-@use "@/assets/scss/_mixin.scss" as mixin;
+@use "~/assets/scss/mixin" as mixin;
 
 .page {
   display: flex;
