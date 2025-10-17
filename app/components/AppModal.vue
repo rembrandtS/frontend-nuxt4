@@ -3,11 +3,18 @@
 </script>
 
 <template>
-  <UModal>
+  <UModal
+      title="Modal with close button"
+      :close="{
+      color: 'primary',
+      variant: 'outline',
+      class: 'rounded-full'
+    }"
+  >
     <UButton label="Open" color="neutral" variant="subtle" />
 
-    <template #content>
-      <Placeholder class="h-48 m-4" />
+    <template #body>
+      <Placeholder class="h-48" />
     </template>
   </UModal>
 </template>

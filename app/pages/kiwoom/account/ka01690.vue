@@ -2,6 +2,7 @@
 <script setup lang="ts">
 import {useKiwoomAccountStore} from '@/stores/kiwoom/account'
 import StockComponent from "~/pages/kiwoom/components/Stock.vue";
+
 import dayjs from "dayjs";
 
 definePageMeta({
@@ -35,6 +36,9 @@ onMounted(() => {
     </div>
     <div>
       <NuxtLink to="/kiwoom">주식 홈으로 돌아가기</NuxtLink>
+    </div>
+    <div>
+      <AppModal></AppModal>
     </div>
   </div>
 </template>

@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     modules: [
         '@pinia/nuxt',
         'pinia-plugin-persistedstate/nuxt',
+        '@nuxt/ui',
     ],
     pinia: {
         storesDirs: ['@/stores/**'],
