@@ -1,5 +1,4 @@
 export interface ka01690Vo {
-    tr: string;
     qry_dt: string;
 }
 

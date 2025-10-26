@@ -35,8 +35,12 @@ export const useOptionsStore = defineStore('options', {
         }
     },
     actions: {  // vuex 에 mutation 기능 포함-state 변경 기능, 백엔트 사용, 비동기 처리도 가능
+        // `this`를 사용하므로, 화살표 함수는 사용할 수 없습니다
         increment() {
             this.count++;
-        }
+        },
+        randomizeCounter() {
+            this.count = Math.round(100 * Math.random())
+        },
     },
 });

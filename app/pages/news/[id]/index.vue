@@ -3,6 +3,10 @@ import CardComponent from '../components/Card.vue';
 import {useStore} from '~/stores/api';
 import {VueSpinnerFacebook} from "vue3-spinners";
 
+definePageMeta({
+  layout: 'news'
+})
+
 const route = useRoute();
 const store = useStore();
 const {pending} = await useAsyncData("getNews", store.getNews);

@@ -19,12 +19,10 @@ export const useKiwoomAuthStore  = defineStore('kiwoom-auth', () => {
 
         try{
             accessToken.value = await axios.post(url,req.value).then((result) => { return result.data; });
-            console.log(accessToken.value);
         }catch(e){
             console.log(e);
         }
     }
-
     return {host: HOST, res: accessToken, getToken};
 }, {persist: true
 },);

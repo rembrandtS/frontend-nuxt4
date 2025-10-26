@@ -23,6 +23,8 @@ export const useStore  = defineStore('api', () => {
         }catch(e){
             console.log(e);
         }
+
+        return null;
     }
 
     return { searchValue, articles: articles, changeSearchValue, getNews };

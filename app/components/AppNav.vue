@@ -24,7 +24,8 @@
 <template>
   <nav class="nav">
     <div class="nav__list">
-      <NuxtLink  v-for="item in navItems" :to="item.path" :key="item.idx" class="nav__list__item" :class="{ 'active': item.clicked }">{{ item.label }}</NuxtLink>
+      <NuxtLink to="/news" class="nav__list__item">전체</NuxtLink>
+      <NuxtLink v-for="item in navItems" :to="'/news/'+item.path" :key="item.idx" class="nav__list__item" :class="{ 'active': item.clicked }">{{ item.label }}</NuxtLink>
     </div>
   </nav>
 </template>

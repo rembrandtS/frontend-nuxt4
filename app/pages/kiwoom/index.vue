@@ -16,9 +16,9 @@ const {pending} = await useAsyncData("getToken", store.getToken);
     <h1>결과 코드 / 메세지</h1>
     {{ store.res?.return_code }} // {{ store.res?.return_msg }}
     <br>
-  </div>
 
-  <NuxtLink to="/kiwoom/account/ka01690">주식 현황 보러 가기</NuxtLink>
+    <NuxtLink to="/kiwoom/account/ka01690">주식 현황 보러 가기</NuxtLink>
+  </div>
 </template>
 
 <style lang="scss" scoped>

@@ -11,6 +11,98 @@ const {data}=toRefs(props); //구조 분해 할당
 // function formatMoney(value) {
 //   return new Intl.NumberFormat('ko-KR').format(value);
 // }
+
+const items = ref([
+  [
+    {
+      label: 'Benjamin',
+      avatar: {
+        src: 'https://github.com/benjamincanac.png'
+      },
+      type: 'label'
+    }
+  ],
+  [
+    {
+      label: 'Profile',
+      icon: 'i-lucide-user',
+      onSelect() {
+          alert("onSelect Event : Profile!!!");
+      }
+    },
+    {
+      label: 'Billing',
+      icon: 'i-lucide-credit-card'
+    },
+    {
+      label: 'Settings',
+      icon: 'i-lucide-cog',
+      kbds: [',']
+    },
+    {
+      label: 'Keyboard shortcuts',
+      icon: 'i-lucide-monitor'
+    }
+  ],
+  [
+    {
+      label: 'Team',
+      icon: 'i-lucide-users'
+    },
+    {
+      label: 'Invite users',
+      icon: 'i-lucide-user-plus',
+      children: [
+        [
+          {
+            label: 'Email',
+            icon: 'i-lucide-mail'
+          },
+          {
+            label: 'Message',
+            icon: 'i-lucide-message-square'
+          }
+        ],
+        [
+          {
+            label: 'More',
+            icon: 'i-lucide-circle-plus'
+          }
+        ]
+      ]
+    },
+    {
+      label: 'New team',
+      icon: 'i-lucide-plus',
+      kbds: ['meta', 'n']
+    }
+  ],
+  [
+    {
+      label: 'GitHub',
+      icon: 'i-simple-icons-github',
+      to: 'https://github.com/nuxt/ui',
+      target: '_blank'
+    },
+    {
+      label: 'Support',
+      icon: 'i-lucide-life-buoy',
+      to: '/docs/components/dropdown-menu'
+    },
+    {
+      label: 'API',
+      icon: 'i-lucide-cloud',
+      disabled: true
+    }
+  ],
+  [
+    {
+      label: 'Logout',
+      icon: 'i-lucide-log-out',
+      kbds: ['shift', 'meta', 'q']
+    }
+  ]
+])
 </script>
 
 <template>
@@ -19,6 +111,14 @@ const {data}=toRefs(props); //구조 분해 할당
       <div class="card__info-box__header">
         <div class="broadcast">
           <span class="broadcast__company">키움닷컴</span>
+          <div>
+
+          <UDropdownMenu :items="items">
+            <UTooltip arrow text="주식 매수, 매도" :content="{side:'top', sideoffset:12}">
+            <UButton icon="i-lucide-menu" color="neutral" variant="outline" />
+            </UTooltip>
+          </UDropdownMenu>
+          </div>
         </div>
         <span class="title">{{data.stk_nm}}[{{data.stk_cd}}]</span>
       </div>
@@ -61,7 +161,7 @@ const {data}=toRefs(props); //구조 분해 할당
   padding: 24px !important;
   gap: 20px;
 
-  // background-color: $color-black-700; // 다크모드
+  //background-color: color.$color-black-700; // 다크모드
   background-color: color.$color-white-000;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
   border: 0.5px solid color.$color-gray-000;

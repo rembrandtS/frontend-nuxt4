@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import CardComponent from '~/pages/news/components/Card.vue';
-import {useStore} from '~/stores/api';
+import CardComponent from './components/Card.vue';
+import {useStore} from '@/stores/api';
 
 definePageMeta({
-  layout: 'news',
+  layout: 'news'
 })
 
 const store = useStore();
-const {pending} = await useAsyncData("getNews", store.getNews);
+await useAsyncData("getNews", store.getNews);
 </script>
 
 <template>
-<div class="page">
-  <CardComponent v-for="article in store.articles" :key="article.url" :data="article" />
-</div>
+  <div class="page">
+    <CardComponent v-for="article in store.articles" :key="article.url" :data="article" />
+  </div>
 </template>
 
 <style lang="scss" scoped>

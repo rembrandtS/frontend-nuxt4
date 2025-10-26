@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import dayjs from 'dayjs';
 import type { Article } from '~/types/api';
+import {useStore} from '@/stores/api';
 
 interface Props {
   data: Article;
@@ -8,6 +9,12 @@ interface Props {
 
 const props = defineProps<Props>();
 const {data}=toRefs(props); //구조 분해 할당
+
+const store = useStore();
+
+console.log("store.articles",store.articles);
+console.log("store.searchValue",store.searchValue);
+
 
 const url = data.value.url;
 const website = computed(() => {
@@ -60,12 +67,12 @@ const logo = computed(() => {
   flex-direction: column;
 
   width: calc(360px - 48px);
-  height: 440px;
+  height: 480px;
 
   padding: 24px !important;
   gap: 20px;
 
-  // background-color: $color-black-700; // 다크모드
+  // background-color: color.$color-black-700; // 다크모드
   background-color: color.$color-white-000;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
   border: 0.5px solid color.$color-gray-000;
